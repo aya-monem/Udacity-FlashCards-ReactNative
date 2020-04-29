@@ -1,7 +1,8 @@
 {
   "expo": {
-    "name": "FlashCards",
-    "slug": "FlashCards",
+    "name": "mobile-flashcards",
+    "slug": "mobile-flashcards",
+    "description": "It is a great App ;)",
     "platforms": [
       "ios",
       "android",
