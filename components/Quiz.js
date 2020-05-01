@@ -5,7 +5,7 @@ import { TouchableOpacity } from 'react-native-gesture-handler'
 import { red , green, gray } from '../utils/colors'
 import {clearLocalNotification , setLocalNotification} from '../utils/helpers'
 
-class Quiz extends React.Component{
+class Quiz extends React.PureComponent{
     state = {
         currentQuestionIndex : 0,
         showingQuestion : true,
@@ -99,7 +99,7 @@ class Quiz extends React.Component{
                 
                 <TouchableOpacity 
                     onPress={this.toggleCase} >
-                    <Text style={{fontSize:17,marginBottom:20 , color:red}}>
+                    <Text style={styles.toggleBtnText}>
                         {showingQuestion === true ? 'Show Answer' : 'Show Question'}
                     </Text>
                         
@@ -107,7 +107,7 @@ class Quiz extends React.Component{
             </View>
                
                 {/* // indicator of no of questions */}
-            <Text style={{marginBottom:10,fontWeight:'bold'}}>
+            <Text style={styles.indicatorText}>
                 {`${(questions.length) - (currentQuestionIndex+1) } remaining questions `}
             </Text>
     
@@ -186,7 +186,17 @@ const styles= StyleSheet.create({
            fontSize : 27,
            textAlign:'center',
            paddingBottom:20,
-       }
+       },
+       toggleBtnText:{
+           fontSize:17,
+           marginBottom:20 ,
+            color:red
+        },
+        indicatorText: {
+            marginBottom:10,
+            fontWeight:'bold'
+        }
+
 })
 
 function mapStatesToPros( decks , {route} ){

@@ -62,7 +62,7 @@ export const initialDecks = {
 const NOTIFICATION_KEY = 'UdaciFlashCards:notifications'
 
         // crate the notification itself (returnan object)
-  function createNotification() {
+  const createNotification = () => {
     return {
       title: 'Ready for Quiz ;)',
       body: "👋 don't forget your daily quiz!",
